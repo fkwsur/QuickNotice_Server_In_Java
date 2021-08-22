@@ -55,7 +55,7 @@ public class BoardComment  {
   }
 
   // 지역변수 초기화
-  public BoardComment (Long idx, Long b_idx, String user_id, String content, String writer {
+  public BoardComment (Long idx, Long b_idx, String user_id, String content, String writer) {
     super();
     this.idx = idx;
     this.b_idx =b_idx;

@@ -12,6 +12,79 @@ public class User {
   private String ms_token;
   private String user_img;
 
+	public Long getIdx() {
+		return this.idx;
+	}
+
+	public void setIdx(Long idx) {
+		this.idx = idx;
+	}
+
+	public String getUser_id() {
+		return this.user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUser_name() {
+		return this.user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getBirth() {
+		return this.birth;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+	public String getGender() {
+		return this.gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMs_token() {
+		return this.ms_token;
+	}
+
+	public void setMs_token(String ms_token) {
+		this.ms_token = ms_token;
+	}
+
+	public String getUser_img() {
+		return this.user_img;
+	}
+
+	public void setUser_img(String user_img) {
+		this.user_img = user_img;
+	}
+
+
 
   // 클래스 초기화
   public User() {

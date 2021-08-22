@@ -2,7 +2,7 @@ package quick.notice.quicknotice;
 
 import quick.notice.models.*;
 import quick.notice.service.*;
-import quick.notice.controller.ExController;
+import quick.notice.controller.*;
 
 import org.apache.ibatis.type.MappedTypes;
 import org.mybatis.spring.annotation.MapperScan;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan; //컴포넌트 스�
 @MappedTypes(User.class)
 @MapperScan("quick.notice.mapper")
 @SpringBootApplication
-@ComponentScan(basePackageClasses={ExController.class, Bcrypt.class, JWTManager.class}) //컨트롤러 읽기
+@ComponentScan(basePackageClasses={UserController.class, Bcrypt.class, JWTManager.class}) //컨트롤러 읽기
 public class QuicknoticeApplication {
 
 	public static void main(String[] args) {

@@ -75,7 +75,7 @@ public class Board  {
   }
 
   // 지역변수 초기화
-  public Board (Long idx, String title, String desc, String user_id, String group_idx, String notice, String writer {
+  public Board (Long idx, String title, String desc, String user_id, String group_idx, String notice, String writer) {
     super();
     this.idx = idx;
     this.title =title;
