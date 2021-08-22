@@ -2,35 +2,48 @@ package quick.notice.models;
 
 public class ReqUser {
 
-  private String id;
+  private String user_id;
   private String password;
+  private String token;
+
+
+
+	public String getUser_id() {
+		return this.user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+  
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
 
   public ReqUser() {
     super();
   }
 
-  public ReqUser(String id, String password) {
+  public ReqUser(String user_id, String password) {
     super();
-    this.id = id;
+    this.user_id = user_id;
     this.password = password;
+    this.token = token;
   }
 
-
-  public String getId() {
-    return id;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
 
   
 

@@ -69,4 +69,45 @@ public class UserController {
       }
     }
 
+    @PostMapping("/signin")
+    public ResponseEntity<Map<String, String>> SignIn(@RequestBody ReqUser req) {
+      try{
+        User user = new User();
+        user = userMapper.findOne(req.getUser_id());
+        Boolean result = bcrypt.CompareHash(req.getPassword(), user.getPassword());
+        Map<String,String> map = new HashMap<>();
+        
+        if (result) {
+          String token = jwt.CreateToken(user.getUser_id());
+          map.put("result", token);
+          return new ResponseEntity<>(map, HttpStatus.OK);
+        } else {
+          map.put("result", "password is not correct");
+          return new ResponseEntity<>(map, HttpStatus.OK);        
+        }
+      }catch(Exception e){
+        Map<String,String> map = new HashMap<>();
+        map.put("result", e.toString());
+       return new ResponseEntity<>(map, HttpStatus.OK);
+      }
+    }
+
+    @PostMapping("/userinfo")
+    public ResponseEntity<Map<String, String>> UserInfo(@RequestBody ReqUser req) {
+      try{
+        String token = jwt.VerifyToken(req.getToken());
+        User user = new User();
+        user = userMapper.findOne(token);
+        Map<String,String> map = new HashMap<>();
+        map.put("result", "성공");
+       return new ResponseEntity<>(map, HttpStatus.OK);
+      }catch(Exception e){
+        Map<String,String> map = new HashMap<>();
+        map.put("result", e.toString());
+        return new ResponseEntity<>(map, HttpStatus.OK);
+      }
+    }
+
+
+
 }
